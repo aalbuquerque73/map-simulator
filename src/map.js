@@ -17,26 +17,6 @@ export function Map(width, height) {
             }
             return true;
         },
-        render({ x, y }, ch = 'X') {
-            for (let v = 0; v < width; v++) {
-                process.stdout.write('+-');
-            }
-            console.log('+');
-            for (let v = 0; v < height; v++) {
-                for (let u = 0; u < width; u++) {
-                    if (u === x && v === y) {
-                        process.stdout.write(`|${ch}`);
-                        continue;
-                    }
-                    process.stdout.write('| ');
-                }
-                console.log('|');
-                for (let v = 0; v < width; v++) {
-                    process.stdout.write('+-');
-                }
-                console.log('+');
-            }
-        },
     };
     return map;
 }

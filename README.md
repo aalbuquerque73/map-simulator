@@ -13,7 +13,10 @@ At the end of the simulation, the application prints the object's final position
 
 # Running the Project
 
-The project uses Node.js and ES modules. No additional dependencies are required.
+The project uses Node.js and ES modules.
+
+* **Runtime dependencies:** None.
+* **Development dependencies:** c8, used for code coverage reporting.
 
 ## Run the application
 
@@ -61,6 +64,16 @@ To run tests for an individual module:
 
 * Use a Node.js version that supports the built-in test runner (node:test).
 
+# Code Coverage
+
+The project uses c8 to measure code coverage.
+
+Generate text and HTML coverage reports:
+
+`npm run test:coverage`
+
+The text report is displayed in the terminal, and the HTML report is generated in the coverage/ directory.
+
 # Runner
 
 Reads from the stdin a list of values separated by spaces, comas or semicolons
@@ -70,7 +83,7 @@ Reads from the stdin a list of values separated by spaces, comas or semicolons
 * The remaining values specify the commands to execute. See [commands rule](#commands)
 * Values that are not numeric are converted to `0`
 * The simulation stops when it processes the first `0` command or when there are no more input values to process.
-* If the object leaves the map after a movement, the simulation stops immediately, regardless of whether more input remains.
+* If the object leaves the map after a movement, the simulation stops, and remaining input is ignored.
 
 ## Example of valid inputs:
 

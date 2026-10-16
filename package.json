@@ -8,6 +8,10 @@
   "main": "src/runner.js",
   "scripts": {
     "start": "node src/runner.js",
-    "test": "node --test"
+    "test": "node --test",
+    "test:coverage": "c8 --reporter=text --reporter=html node --test"
+  },
+  "devDependencies": {
+    "c8": "^12.0.0"
   }
 }

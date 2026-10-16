@@ -25,8 +25,6 @@ export function StateMachine(map, macGuffin) {
                         // Quit
                         list.length = 0;
                         break;
-                    default:
-                        break;
                 }
                 if (!map.isValid(macGuffin.position)) {
                     macGuffin.setPosition(-1, -1);
