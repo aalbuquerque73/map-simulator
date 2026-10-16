@@ -1,0 +1,13 @@
+{
+  "name": "runner",
+  "version": "1.0.0",
+  "description": "Creates a map with size (width, height) and simulates an object moving through the map according to the instructions read from stdio, and check that the object stays inside the map at all times while moving according to the rules",
+  "license": "ISC",
+  "author": "Americo Albuquerque <americo.albuquerque@proton.me>",
+  "type": "module",
+  "main": "src/runner.js",
+  "scripts": {
+    "start": "node src/runner.js",
+    "test": "node --test"
+  }
+}
