@@ -4,7 +4,7 @@ import { stdin } from 'node:process';
 import { pathToFileURL } from 'node:url';
 import { MacGuffin } from './mac-guffin.js';
 import { Map } from './map.js';
-import { StateMachine } from './state-machine.js';
+import { Simulator } from './simulator.js';
 
 export function runner(stream = stdin) {
     return new Promise((resolve, reject) => {
@@ -37,8 +37,8 @@ export function simulate(list) {
     const commands = list.slice(4);
     const map = new Map(width, height);
     const macGuffin = new MacGuffin(x, y);
-    const stateMachine = new StateMachine(map, macGuffin);
-    stateMachine.simulate(commands);
+    const simulator = new Simulator(map, macGuffin);
+    simulator.simulate(commands);
 }
 
 // Run interactively only when executed directly.

@@ -42,7 +42,7 @@ Each module has a corresponding test file:
 
 * `mac-guffin.test.js` — tests the MacGuffin module.
 * `map.test.js` — tests the map module.
-* `state-machine.test.js` — tests the state machine.
+* `simulator.test.js` — tests the simulator.
 * `runner.test.js` — tests the input runner.
 
 ## Run all tests
@@ -57,7 +57,7 @@ To run tests for an individual module:
 
 `node --test tests/mac-guffin.test.js`
 `node --test tests/map.test.js`
-`node --test tests/state-machine.test.js`
+`node --test tests/simulator.test.js`
 `node --test tests/runner.test.js`
 
 ## Test requirements
@@ -129,4 +129,4 @@ Reads from the stdin a list of values separated by spaces, comas or semicolons
 * 4 - rotates 90 degrees counterclockwise (north -> west -> south -> east -> north)
 
 **Note:**
-The state-machine stops processing values once it encounters a `0`, the object leaves the map or doesn't have any more inputs to run.
+The simulator stops processing values once it encounters a `0`, the object leaves the map or doesn't have any more inputs to run.

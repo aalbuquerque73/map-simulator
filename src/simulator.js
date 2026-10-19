@@ -1,4 +1,4 @@
-export function StateMachine(map, macGuffin) {
+export function Simulator(map, macGuffin) {
     const machine = {
         async simulate(commands) {
             const list = commands.slice();
