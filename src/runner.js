@@ -32,13 +32,13 @@ function guaranteeInt(value) {
     return intValue;
 }
 
-export function simulate(list) {
+export async function simulate(list) {
     const [width, height, x, y] = list;
     const commands = list.slice(4);
     const map = new Map(width, height);
     const macGuffin = new MacGuffin(x, y);
     const simulator = new Simulator(map, macGuffin);
-    simulator.simulate(commands);
+    await simulator.simulate(commands);
 }
 
 // Run interactively only when executed directly.
@@ -46,5 +46,5 @@ const filename = path.resolve(fileURLToPath(import.meta.url))
 const command = path.resolve(process.argv[1])
 if (filename == command) {
     const input = await runner();
-    simulate(input);
+    await simulate(input);
 }
