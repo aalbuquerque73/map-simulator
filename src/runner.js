@@ -37,8 +37,14 @@ export function simulate(list) {
     const commands = list.slice(4);
     const map = new Map(width, height);
     const macGuffin = new MacGuffin(x, y);
+    const logger = {
+        start() {},
+        step() {},
+        stop() {},
+        log: console.log,
+    };
     const simulator = new Simulator(map, macGuffin);
-    simulator.simulate(commands);
+    simulator.simulate(commands, logger);
 }
 
 // Run interactively only when executed directly.

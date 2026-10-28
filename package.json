@@ -8,10 +8,16 @@
   "main": "src/runner.js",
   "scripts": {
     "start": "node src/runner.js",
+    "server": "node server/runner.js",
     "test": "node --test",
     "test:coverage": "c8 --reporter=text --reporter=html node --test"
   },
   "devDependencies": {
     "c8": "^12.0.0"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "socket.io": "^4.8.4",
+    "spectre.css": "^0.5.9"
   }
 }

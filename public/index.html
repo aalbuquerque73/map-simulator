@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express Server</title>
+  <link rel="stylesheet" href="spectre.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="panel">
+        <div class="panel-header">
+            <div class="chip">
+                <input id="width" type="number" value="4">
+                x
+                <input id="height" type="number" value="4">
+            </div>
+            <div class="chip">
+                <input id="startX" type="number" value="2">
+                x
+                <input id="startY" type="number" value="2">
+            </div>
+
+            <div class="chip">
+                <input id="commands" type="text" value="1,4,1,3,2,3,2,4,1,0">
+            </div>
+
+            <button id="runSimulation">Run simulation</button>
+        </div>
+        <div class="panel-body">
+            <div class="board" id="board"></div>
+        </div>
+        <div class="panel-footer">
+            <pre id="result"></pre>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body > .panel {
+    flex: auto;
+    width: 100%;
+}
+
+body > .panel > .panel-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+body > .panel > .panel-footer {
+    border-top: solid #000000 1px;
+    text-align: center;
+    min-height: 1rem + 1.6rem;
+}
+
+body > .panel > .panel-footer > pre {
+    margin: 0;
+}
+
+.board {
+    display: table;
+    box-sizing: border-box;
+    width: auto;
+    margin: auto;
+    padding: 0;
+    line-height: 1rem;
+}
+
+.board > .row {
+    display: table-row;
+    box-sizing: border-box;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.cell {
+    display: table-cell;
+    flex-direction: row;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 1.2rem;
+    height: 1.2rem;
+    line-height: 1rem;
+    margin: 0;
+    padding: 0;
+    border: solid #000000 1px;
+}
+
+.cell.valid {
+    background-color: #00ff00;
+}
+
+.cell.invalid {
+    background-color: rgb(255, 144, 144);
+}
+
+.chip {
+    display: inline-flex;
+    flex-direction: row;
+    gap: .5rem;
+    padding: .4rem .6rem;
+    box-sizing: border-box;
+    height: 1.6rem;
+}
+
+.chip > input {
+    width: 100%;
+    height: 1rem;
+    padding: 0;
+    box-sizing: border-box;
+}

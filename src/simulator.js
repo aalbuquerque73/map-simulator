@@ -1,7 +1,8 @@
 export function Simulator(map, macGuffin) {
     const machine = {
-        async simulate(commands) {
+        async simulate(commands, logger) {
             const list = commands.slice();
+            logger.start(macGuffin, map, list);
             while (list.length > 0) {
                 const step = list.shift();
                 switch (step) {
@@ -30,8 +31,10 @@ export function Simulator(map, macGuffin) {
                     macGuffin.setPosition(-1, -1);
                     break;
                 }
+                logger.step(macGuffin);
             }
-            console.log(`[${macGuffin.position.x}, ${macGuffin.position.y}]`);
+            logger.stop(macGuffin);
+            logger.log(`[${macGuffin.position.x}, ${macGuffin.position.y}]`);
             return machine;
         }
     };
