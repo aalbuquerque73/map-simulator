@@ -32,19 +32,20 @@ function guaranteeInt(value) {
     return intValue;
 }
 
-export function simulate(list) {
+const defaultLogger = {
+    start() {},
+    step() {},
+    stop() {},
+    log: console.log,
+};
+
+export async function simulate(list, logger = defaultLogger) {
     const [width, height, x, y] = list;
     const commands = list.slice(4);
     const map = new Map(width, height);
     const macGuffin = new MacGuffin(x, y);
-    const logger = {
-        start() {},
-        step() {},
-        stop() {},
-        log: console.log,
-    };
     const simulator = new Simulator(map, macGuffin);
-    simulator.simulate(commands, logger);
+    await simulator.simulate(commands, logger);
 }
 
 // Run interactively only when executed directly.
